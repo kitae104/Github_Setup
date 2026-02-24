@@ -1,0 +1,5 @@
+# Created at 2026-02-25T00:58:37.421
+Boot Manifest-JAR contains absolute paths in classpath 'd:\Githubs\Vibe_WS\Github_Setup\backend\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
