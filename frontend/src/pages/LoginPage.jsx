@@ -9,6 +9,7 @@ function LoginPage({
     headingId,
     onSwitchToRegister,
     onLoginSuccess,
+    onClose,
 }) {
     const navigate = useNavigate();
     const [form, setForm] = useState({ email: "", password: "" });
@@ -44,11 +45,32 @@ function LoginPage({
         }
     };
 
+    const onCloseClick = () => {
+        if (onClose) {
+            onClose();
+            return;
+        }
+        navigate("/", { replace: true });
+    };
+
     return (
-        <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 id={headingId} className="text-lg font-semibold text-slate-900">
-                로그인
-            </h2>
+        <section className="glass-panel rounded-xl p-6">
+            <div className="flex items-start justify-between gap-3">
+                <h2
+                    id={headingId}
+                    className="text-lg font-semibold text-slate-900"
+                >
+                    로그인
+                </h2>
+                <button
+                    type="button"
+                    onClick={onCloseClick}
+                    className="glass-subtle rounded-md px-2 py-1 text-sm text-slate-700 transition hover:bg-white/70 hover:text-slate-900"
+                    aria-label="로그인 닫기"
+                >
+                    ✕
+                </button>
+            </div>
             <form onSubmit={onSubmit} className="mt-5 space-y-4">
                 <label className="block text-sm font-medium text-slate-700">
                     <span className="mb-1.5 block">이메일</span>
@@ -58,7 +80,7 @@ function LoginPage({
                         value={form.email}
                         onChange={onChange}
                         required
-                        className="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                        className="glass-input w-full rounded-lg px-3 py-2 outline-none transition"
                     />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -69,7 +91,7 @@ function LoginPage({
                         value={form.password}
                         onChange={onChange}
                         required
-                        className="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                        className="glass-input w-full rounded-lg px-3 py-2 outline-none transition"
                     />
                 </label>
                 {error && (
@@ -78,7 +100,7 @@ function LoginPage({
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="glass-button w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60"
                 >
                     {loading ? "로그인 중..." : "로그인"}
                 </button>
@@ -114,6 +136,7 @@ LoginPage.propTypes = {
     headingId: PropTypes.string,
     onSwitchToRegister: PropTypes.func,
     onLoginSuccess: PropTypes.func,
+    onClose: PropTypes.func,
 };
 
 export default LoginPage;

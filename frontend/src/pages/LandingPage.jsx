@@ -10,13 +10,13 @@ import PropTypes from "prop-types";
 function LandingPage({ onLoginClick, onRegisterClick }) {
     return (
         <section className="space-y-6">
-            <article className="relative overflow-hidden rounded-2xl bg-slate-900 text-white shadow-sm">
+            <article className="glass-panel-strong relative overflow-hidden rounded-2xl text-white">
                 <img
                     src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"
                     alt="팀이 협업하는 랜딩 페이지 배경"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-slate-900/65" />
+                <div className="absolute inset-0 bg-slate-950/60" />
                 <div className="relative z-10 px-6 py-12 sm:px-8 sm:py-16">
                     <p className="text-sm font-semibold text-slate-200">
                         2026 Product Launch
@@ -33,7 +33,7 @@ function LandingPage({ onLoginClick, onRegisterClick }) {
                         <button
                             type="button"
                             onClick={onRegisterClick}
-                            className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+                            className="glass-button inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition"
                         >
                             <FaArrowRight />
                             시작하기
@@ -41,7 +41,7 @@ function LandingPage({ onLoginClick, onRegisterClick }) {
                         <button
                             type="button"
                             onClick={onLoginClick}
-                            className="inline-flex items-center gap-2 rounded-lg border border-white/40 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20"
+                            className="glass-button-ghost inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition"
                         >
                             <FaCirclePlay />
                             로그인
@@ -51,8 +51,8 @@ function LandingPage({ onLoginClick, onRegisterClick }) {
             </article>
 
             <article className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-slate-700">
+                <div className="glass-panel rounded-xl p-5">
+                    <div className="glass-subtle inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700">
                         <FaShieldHalved />
                     </div>
                     <h2 className="mt-3 text-base font-semibold text-slate-900">
@@ -63,8 +63,8 @@ function LandingPage({ onLoginClick, onRegisterClick }) {
                         유지합니다.
                     </p>
                 </div>
-                <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-slate-700">
+                <div className="glass-panel rounded-xl p-5">
+                    <div className="glass-subtle inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700">
                         <FaBolt />
                     </div>
                     <h2 className="mt-3 text-base font-semibold text-slate-900">
@@ -75,8 +75,8 @@ function LandingPage({ onLoginClick, onRegisterClick }) {
                         빠르게 진행할 수 있습니다.
                     </p>
                 </div>
-                <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:col-span-2 lg:col-span-1">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-slate-700">
+                <div className="glass-panel rounded-xl p-5 sm:col-span-2 lg:col-span-1">
+                    <div className="glass-subtle inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700">
                         <FaLayerGroup />
                     </div>
                     <h2 className="mt-3 text-base font-semibold text-slate-900">

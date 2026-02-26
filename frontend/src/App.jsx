@@ -171,7 +171,7 @@ function App() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-800">
+        <div className="min-h-screen text-slate-900">
             <Navbar
                 onLoginClick={openLoginModal}
                 onRegisterClick={openRegisterModal}
@@ -206,7 +206,7 @@ function App() {
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                     <button
                         type="button"
-                        className={`absolute inset-0 bg-slate-900/50 transition-opacity duration-200 ${
+                        className={`absolute inset-0 bg-slate-950/40 backdrop-blur-[2px] transition-opacity duration-200 ${
                             isAuthModalVisible ? "opacity-100" : "opacity-0"
                         }`}
                         onClick={closeAuthModal}
@@ -230,7 +230,7 @@ function App() {
                         <button
                             type="button"
                             onClick={closeAuthModal}
-                            className="absolute right-3 top-3 rounded-md px-2 py-1 text-sm text-slate-500 transition hover:bg-slate-100 hover:text-slate-800"
+                            className="glass-subtle absolute right-3 top-3 rounded-md px-2 py-1 text-sm text-slate-700 transition hover:bg-white/70 hover:text-slate-900"
                             aria-label="모달 닫기"
                         >
                             ✕
@@ -243,6 +243,7 @@ function App() {
                                     setAuthQuery("register")
                                 }
                                 onLoginSuccess={onLoginSuccess}
+                                onClose={closeAuthModal}
                             />
                         ) : (
                             <RegisterPage
@@ -250,6 +251,7 @@ function App() {
                                 headingId="auth-modal-register-title"
                                 onSwitchToLogin={() => setAuthQuery("login")}
                                 onRegisterSuccess={onRegisterSuccess}
+                                onClose={closeAuthModal}
                             />
                         )}
                     </dialog>

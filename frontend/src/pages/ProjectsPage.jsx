@@ -28,9 +28,9 @@ const SAMPLE_PROJECTS = [
 ];
 
 const statusClassName = {
-    "진행 중": "bg-blue-100 text-blue-700",
-    대기: "bg-amber-100 text-amber-700",
-    완료: "bg-emerald-100 text-emerald-700",
+    "진행 중": "bg-blue-200/70 text-blue-800",
+    대기: "bg-amber-200/70 text-amber-800",
+    완료: "bg-emerald-200/70 text-emerald-800",
 };
 
 function ProjectsPage() {
@@ -52,7 +52,7 @@ function ProjectsPage() {
     }, [keyword]);
 
     return (
-        <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+        <section className="glass-panel rounded-xl p-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                     <h2 className="text-lg font-semibold text-slate-900">
@@ -75,12 +75,12 @@ function ProjectsPage() {
                         value={keyword}
                         onChange={(event) => setKeyword(event.target.value)}
                         placeholder="프로젝트명, 담당팀"
-                        className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                        className="glass-input mt-1 w-full rounded-lg px-3 py-2 text-sm outline-none transition"
                     />
                 </div>
             </div>
 
-            <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700">
+            <div className="glass-subtle mt-4 rounded-lg px-3 py-2 text-sm text-slate-700">
                 총{" "}
                 <strong className="font-semibold text-slate-900">
                     {filteredProjects.length}
@@ -90,14 +90,14 @@ function ProjectsPage() {
 
             <div className="mt-4 grid gap-3">
                 {filteredProjects.length === 0 ? (
-                    <div className="rounded-lg border border-dashed border-slate-300 p-6 text-center text-sm text-slate-500">
+                    <div className="glass-subtle rounded-lg border-dashed p-6 text-center text-sm text-slate-500">
                         검색 결과가 없습니다.
                     </div>
                 ) : (
                     filteredProjects.map((project) => (
                         <article
                             key={project.id}
-                            className="rounded-lg border border-slate-200 p-4"
+                            className="glass-subtle rounded-lg p-4"
                         >
                             <div className="flex items-start justify-between gap-3">
                                 <div>

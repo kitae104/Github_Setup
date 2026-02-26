@@ -14,7 +14,7 @@ function Navbar({ onLoginClick, onRegisterClick }) {
     };
 
     return (
-        <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/80 backdrop-blur">
+        <header className="glass-panel sticky top-0 z-40 border-x-0 border-t-0">
             <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
                 <Link
                     to="/"
@@ -30,8 +30,8 @@ function Navbar({ onLoginClick, onRegisterClick }) {
                             className={({ isActive }) =>
                                 `rounded-lg px-3 py-2 text-sm font-medium transition ${
                                     isActive
-                                        ? "bg-slate-900 text-white"
-                                        : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                                        ? "glass-button text-white"
+                                        : "glass-subtle text-slate-700 hover:bg-white/70 hover:text-slate-900"
                                 }`
                             }
                         >
@@ -42,8 +42,8 @@ function Navbar({ onLoginClick, onRegisterClick }) {
                             className={({ isActive }) =>
                                 `rounded-lg px-3 py-2 text-sm font-medium transition ${
                                     isActive
-                                        ? "bg-slate-900 text-white"
-                                        : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                                        ? "glass-button text-white"
+                                        : "glass-subtle text-slate-700 hover:bg-white/70 hover:text-slate-900"
                                 }`
                             }
                         >
@@ -52,14 +52,14 @@ function Navbar({ onLoginClick, onRegisterClick }) {
                         <button
                             type="button"
                             onClick={onLoginClick}
-                            className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                            className="glass-subtle rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-white/70 hover:text-slate-900"
                         >
                             로그인
                         </button>
                         <button
                             type="button"
                             onClick={onRegisterClick}
-                            className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                            className="glass-subtle rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-white/70 hover:text-slate-900"
                         >
                             회원가입
                         </button>
@@ -68,7 +68,7 @@ function Navbar({ onLoginClick, onRegisterClick }) {
                     <select
                         defaultValue=""
                         onChange={onProjectMenuChange}
-                        className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                        className="glass-input rounded-lg px-3 py-2 text-sm text-slate-700 outline-none transition"
                     >
                         <option value="" disabled>
                             프로젝트 메뉴
