@@ -23,8 +23,8 @@ client.interceptors.response.use(
     (error) => {
         if (error?.response?.status === 401) {
             clearToken();
-            if (window.location.pathname !== "/login") {
-                window.location.replace("/login");
+            if (globalThis.location.pathname !== "/login") {
+                globalThis.location.replace("/login");
             }
         }
         return Promise.reject(error);
